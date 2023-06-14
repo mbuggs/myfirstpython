@@ -1,41 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Tue Jun 13 17:54:51 2023
 
-This is a temporary script file.
+@author: mbuggs3
 """
-def calculate_max_height(v0, g):
-    t = v0 / g
-    max_height = (v0 ** 2) / (2 * g) 
-    return max_height
-v0 = float(input("Enter the initial velocity of the ball (ft/sec): "))
-g = 32.8
-max_height = calculate_max_height(v0, g)
-print(f"The maximum height reached by the ball is: {max_height} ft")
 
-
-def calculate_max_height(v0, g):
-    """
-    Calculates the maximum height reached by a ball thrown upward.
-
-    Args:
-        v0: Initial velocity of the ball in ft/sec (thrown upward).
-        g: Force of gravity in ft/sec^2.
-
-    Returns:
-        The maximum height reached by the ball in ft.
-    """
-    t = v0 / g  # Time taken to reach the highest point
-    max_height = (v0 ** 2) / (2 * g)  # Maximum height formula
-
-    return max_height
-
-# Get inputs from the user
-v0 = float(input("Enter the initial velocity of the ball (ft/sec): "))
-g = 32.8  # Acceleration due to gravity in ft/sec^2
-
-# Calculate the maximum height
-max_height = calculate_max_height(v0, g)
-
-# Print the result
-print(f"The maximum height reached by the ball is: {max_height} ft")
+def height(v0,t):
+    g = 32.8
+    y = v0*t- 0.5*g*t**2
+    return y
+t=1
+while t > 0:
+    v0 = input(' enter velocity')
+    v0 = float(v0)
+    t = input(' enter the time, sec: ')
+    t = float(t)
+    y = height(v0,t)
+    print(f"after {t} seconds height = {y}")
+    
